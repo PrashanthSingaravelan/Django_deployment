@@ -18,7 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from app_1 import views
 
+from django.conf.urls import include
+
 urlpatterns = [
+    url(r'^page_1/',include('app_1.urls')),
     url(r'^$',views.index,name='index'),
     path('admin/', admin.site.urls),
 ]
+
+
+
+
+
+
