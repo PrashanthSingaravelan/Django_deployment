@@ -1,0 +1,12 @@
+## Create a django project
+django-admin
+django-admin startproject <project_name>
+
+## Create a django application
+python manage.py startapp <application_name>
+
+## Run the django application
+python manage.py runserver
+
+
+
