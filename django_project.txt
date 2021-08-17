@@ -1,9 +1,23 @@
+## Create a virtualenvironment
+python -m venv <"virtual_environment_name">
+<"virtual_environment_name">\Scripts\activate
+
+## Download the django
+pip install django
+
 ## Create a django project
-django-admin
+1) create a project folder and go inside
+2) django-admin
 django-admin startproject <project_name>
 
 ## Create a django application
+Go inside that created project
 python manage.py startapp <application_name>
+
+## After project and app creation
+1) project folder
+2) app folder
+3) manage.py file
 
 ## Run the django application
 python manage.py runserver
