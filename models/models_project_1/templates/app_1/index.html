@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-{% load staticfiles %}
+{% load static %}
 <html>
 
 <head>
@@ -16,8 +16,9 @@
     {% if access_records %}
     <table>
         <thead>
-            <th> Site Name     </th>
-            <th> Date Accessed </th>
+        {% comment %} table heading {% endcomment %}
+            <th> Site Name     </th>    
+            <th> Date Accessed </th>   
         </thead>
             {% for acc in access_records %}
             <tr>
@@ -35,5 +36,8 @@
 </body>
 
 </html>
+
+
+
 
 

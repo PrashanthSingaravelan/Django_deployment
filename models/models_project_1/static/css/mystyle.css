@@ -1,5 +1,10 @@
 h1 {
-    font-size: large;
-    font-style: bold;
-    background-color: greenyellow;
+    color: red;
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+    width: 210px;
 }
