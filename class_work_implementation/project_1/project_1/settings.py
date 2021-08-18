@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR , 'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR , "templates")
 STATIC_DIR   = os.path.join(BASE_DIR , "static")
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'app_1.apps.App_1Config',
     'app_1',
 ]
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'project_1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [r"C:\github\django-deployment\models\models_project_1\templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

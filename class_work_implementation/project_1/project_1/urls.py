@@ -23,7 +23,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     url(r'^$'     , views.index , name = 'index'),      ## home page
-    url(r'^help/'  , include('app_1.urls')),
+    url(r'^page_1/'  , include('app_1.urls')),
     
     path('admin/' , admin.site.urls),
 ]
