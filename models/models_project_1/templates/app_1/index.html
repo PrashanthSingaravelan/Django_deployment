@@ -5,7 +5,7 @@
 <head>
     <meta charset = 'utf-8'>
     <title>Models Templates Views</title>
-    <link rel="stylesheet" href="{%static "css/mystyle.css"%}"/>
+    <link rel="stylesheet" href = "{%static "css/mystyle.css"%}"/>
 </head>
 
 <body>
@@ -13,7 +13,9 @@
     <h2>Here are your records</h2>
 
     <div class = container>
-    {% if access_records %}
+    {% comment %} // if successfully i fethched the results from the data-base {% endcomment %}
+    
+    {% if access_records %}  
     <table>
         <thead>
         {% comment %} table heading {% endcomment %}
@@ -22,8 +24,8 @@
         </thead>
             {% for acc in access_records %}
             <tr>
-                <td>{{ acc.name }} </td>
-                <td>{{ acc.date }} </td>
+                <td> {{ acc.name }} </td>
+                <td> {{ acc.date }} </td>
             </tr>
             {% endfor %}
     </table>

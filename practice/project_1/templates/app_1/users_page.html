@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset = 'utf-8'>
+    <title>Users Info</title>
+</head>
+
+<body>
+    <h2>Here are your records</h2>
+
+    <div class = container>
+    {% comment %} // if successfully i fethched the results from the data-base {% endcomment %}
+
+    {% if user_records %}
+    <table>
+        <thead>
+        {% comment %} table heading {% endcomment %}
+            <th> First Name  </th>
+            <th> Last Name </th>
+            <th> Email address </th>
+        </thead>
+
+            {% for acc in user_records %}
+            <tr>
+                <td> {{ acc.first_name }} </td>
+                <td> {{ acc.last_name }} </td>
+                <td> {{ acc.email }} </td>
+            </tr>
+            {% endfor %}
+
+    </table>
+    {% else %}
+        <p> No User records found! </p>
+    {% endif %}
+
+    </div>
+
+</body>
+
+</html>

@@ -1,27 +1,16 @@
-"""project_1 URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.conf.urls import url
-from django.contrib import admin
-from django.urls import path
+from django.conf.urls import url,include
 from app_1 import views
-
-from django.conf.urls import include
+from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$'       , views.index , name='index'),   ## https://www.facebook.com/
-    url(r'^page_1/' , include('app_1.urls')),  ## https://www.facebook.com/sprashanth.singaravelan/
-    path('admin/', admin.site.urls),
+    url(r'^$'      , views.index , name='index'), 
+    url(r'^users/' , include('app_1.urls')),
+    url(r'^admin/' , admin.site.urls),                ## for admin's page
 ]
+
+                  #   method-1 (going straight the applications's view page)
+    # url(r'^users/' , views.users , name = "users"),   ## for user's page
+
+                 # method-2 (going to application's url and then to view page)
+    # url(r'^users/' , include('app_1.urls')),
+
