@@ -3,39 +3,22 @@
 
 <head>
     <meta charset = 'utf-8'>
-    <title>Users Info</title>
+    <title>Users Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
-    <h2>Here are your records</h2>
+    <div class = 'container'>
+        <h1> Please Sign-up here </h1>
+        <form method = 'POST'>
 
-    <div class = container>
-    {% comment %} // if successfully i fethched the results from the data-base {% endcomment %}
-
-    {% if user_records %}
-    <table>
-        <thead>
-        {% comment %} table heading {% endcomment %}
-            <th> First Name  </th>
-            <th> Last Name </th>
-            <th> Email address </th>
-        </thead>
-
-            {% for acc in user_records %}
-            <tr>
-                <td> {{ acc.first_name }} </td>
-                <td> {{ acc.last_name }} </td>
-                <td> {{ acc.email }} </td>
-            </tr>
-            {% endfor %}
-
-    </table>
-    {% else %}
-        <p> No User records found! </p>
-    {% endif %}
-
+        {% comment %} Each widgets of the form will be in <p> {% endcomment %}
+            {{ form.as_p }}  
+            {% csrf_token %} 
+            <input type='submit' class='btn btn-primary' value='Submit'>
+            
+        </form>
     </div>
-
 </body>
 
 </html>
