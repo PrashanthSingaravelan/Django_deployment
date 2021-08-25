@@ -2,8 +2,11 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request,'app_1/index.html')
-    ## will return what is inside templates directory
+    context_dict = {'Name':'prashanth S',
+                    'Age':21,
+                    'Area_of_interest':'Machine Learning'}
+
+    return render(request,'app_1/index.html',context_dict)
 
 def other(request):
     return render(request,'app_1/other.html')
