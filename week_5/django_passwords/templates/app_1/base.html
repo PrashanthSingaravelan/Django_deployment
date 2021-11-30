@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Base Page
+    </title>
+    <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css"%}'>
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+
+            <a class="navbar-brand" href="https://www.djangoproject.com/start/overview/">
+                <img src='{% static "images/logo.png" %}' width="50" height="50" alt="Prashanth" loading="lazy" class="d-inline-block align-top"> Prashanth
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="justify-content-end collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a class="nav-link active" href="{% url 'app_1:index'%}">Django</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a class="nav-link" href="{% url 'admin:index'%}">Admin</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a class="nav-link" href="{% url 'app_1:register'%}">Registration</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown box
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.youtube.com/">Youtube</a>
+                            <a class="dropdown-item" href="https://en-gb.facebook.com/">Facebook</a>
+                            <div class="dropdown-divider"></div>
+                            <!-- A small divider line -->
+                            <a class="dropdown-item" href="https://github.com/">Github</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container'>
+        {% block body_block %}
+        <!-- Anything outside this will be inherited
+        Inside = Each web-page can have their individual content -->
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>
